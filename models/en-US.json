@@ -13,7 +13,9 @@
                 },
                 {
                     "name": "AMAZON.StopIntent",
-                    "samples": []
+                    "samples": [
+                        "stop right now"
+                    ]
                 },
                 {
                     "name": "AMAZON.FallbackIntent",
@@ -27,7 +29,7 @@
                         "take notes",
                         "take minutes",
                         "listen",
-                        "hey listen"
+                        "hey listen",
                         "take down the following"
                     ],
                     "slots": []
