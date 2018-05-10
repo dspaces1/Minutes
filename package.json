@@ -4,7 +4,10 @@
   "description": "This is an Alexa for Business Minutes Skill",
   "main": "./lambda/custom/index.js",
   "dependencies": {
-    "alexa-sdk": "^1.0.25"
+    "alexa-sdk": "^1.0.25",
+    "bluebird": "^3.5.1",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {},
   "scripts": {

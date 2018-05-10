@@ -50,8 +50,7 @@ const handlers = {
         this.emit(':responseReady')
     },
     'CATCHALL': function() {  // if we get any intents other than the above
-        let text = 'This is what you said: ' + this.event.request.intent.slots.any.value;
-        this.response.speak(text).listen('say some more stuff');
+        util.createContentPage(this.event.request.intent.slots.any.value)
         this.emit(':responseReady');
     }
 };
