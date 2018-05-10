@@ -1,8 +1,8 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "minutes",
-                "intents": [
+            "invocationName": "take minutes",
+            "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
                     "samples": []
@@ -21,18 +21,52 @@
                 },
                 {
                     "name": "StartListeningIntent",
-                    "samples": [
-                        "start",
-                        "start listening",
-                        "take notes",
-                        "take minutes",
-                        "listen",
-                        "hey listen",
-                        "take down the following"
+                    "slots": [
+                        {
+                            "name": "stuff",
+                            "type": "AMAZON.SearchQuery"
+                        }
                     ],
-                    "slots": []
+                    "samples": [
+                        "start {stuff}",
+                        "start listening {stuff}",
+                        "take notes {stuff}",
+                        "take minutes {stuff}",
+                        "listen {stuff}",
+                        "hey listen {stuff}",
+                        "take down the following {stuff}"
+                    ]
+                },
+                {
+                    "name": "CATCHALL",
+                    "slots": [
+                        {
+                            "name": "any",
+                            "type": "AMAZON.LITERAL"
+                        }
+                    ],
+                    "samples": [
+                        "{hey|any}",
+                        "{hey hey|any}",
+                        "{hey hey hey|any}",
+                        "{hey hey hey hey|any}",
+                        "{hey hey hey hey hey|any}"
+                    ]
+                },
+                {
+                    "name": "KeepListeningIntent",
+                    "slots": [
+                        {
+                            "name": "more_stuff",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "hey {more_stuff}"
+                    ]
                 }
-            ]
+            ],
+            "types": []
         }
     }
 }

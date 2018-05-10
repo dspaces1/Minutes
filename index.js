@@ -44,8 +44,15 @@ const handlers = {
         this.emit(':responseReady');
     },
     'StartListeningIntent': function() {
-        util.generate_response(this.response);
+        // util.generate_response(this.response);
+        let text = 'This is what you said: ' + this.event.request.intent.slots.stuff.value;
+        this.response.speak('Keep going' + text).listen('Keep going');
         this.emit(':responseReady')
+    },
+    'CATCHALL': function() {  // if we get any intents other than the above
+        let text = 'This is what you said: ' + this.event.request.intent.slots.any.value;
+        this.response.speak(text).listen('say some more stuff');
+        this.emit(':responseReady');
     }
 };
 
