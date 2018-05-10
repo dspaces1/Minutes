@@ -16,7 +16,7 @@ const SKILL_NAME = 'Minutes';
 
 const HELP_MESSAGE = 'This is an Alexa for Business Minutes Skill.  You can dictate your minutes by saying start, or, you can say exit.';
 const HELP_REPROMPT = 'Let me know when you\'re ready, just say start.';
-const STOP_MESSAGE = 'Hello, Goodbye!';
+const STOP_MESSAGE = 'Goodbye!';
 
 const handlers = {
     'LaunchRequest': function () {

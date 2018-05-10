@@ -13,9 +13,7 @@
                 },
                 {
                     "name": "AMAZON.StopIntent",
-                    "samples": [
-                        "stop right now"
-                    ]
+                    "samples": []
                 },
                 {
                     "name": "AMAZON.FallbackIntent",
