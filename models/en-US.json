@@ -1,0 +1,38 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "minutes",
+                "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "StartListeningIntent",
+                    "samples": [
+                        "start",
+                        "start listening",
+                        "take notes",
+                        "take minutes",
+                        "listen",
+                        "hey listen"
+                        "take down the following"
+                    ],
+                    "slots": []
+                }
+            ]
+        }
+    }
+}
