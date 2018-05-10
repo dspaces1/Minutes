@@ -44,3 +44,22 @@ module.exports.createContentPage = function (notes)
 
   return;
 }
+
+module.exports.isActionItem = function (notes)
+{
+  return notes.includes("action item");
+}
+
+module.exports.attendees = function (notes)
+{
+    var attendeesPhrase = "in the room we have";
+    //var notes2 = "in the room we have Diego Dan Ryan Yakun Kerstin";
+    let containsAttendees = notes.includes(attendeesPhrase);
+
+if (containsAttendees) {
+      var attendees = notes2.replace(attendeesPhrase,'');
+      return attendees;
+  } else {
+      return null;
+  }
+}
