@@ -4,11 +4,12 @@
 
 'use strict';
 const Alexa = require('alexa-sdk');
+const util = require('./lambda/util');
 
 
 //Replace with your app ID (OPTIONAL).  You can find this value at the top of your skill's page on http://developer.amazon.com.
 //Make sure to enclose your value in quotes, like this: const APP_ID = 'amzn1.ask.skill.bb4045e6-b3e8-4133-b650-72923c5980f1';
-const APP_ID = undefined;
+const APP_ID = 'amzn1.ask.skill.df62d19d-d51c-48a5-8127-a4dd6bb7f20c';
 
 const SKILL_NAME = 'Minutes';
 
@@ -42,6 +43,10 @@ const handlers = {
         this.response.speak('Sorry, I didn\'t get that.').listen('Try again');
         this.emit(':responseReady');
     },
+    'StartListeningIntent': function() {
+        util.generate_response(this.response);
+        this.emit(':responseReady')
+    }
 };
 
 exports.handler = function (event, context, callback) {
