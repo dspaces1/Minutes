@@ -45,8 +45,6 @@ let getContentPage = function () {
       return rp(options)
     })
     .then(function (response) {
-      console.log(response)
-      console.log(2345667)
       let resp = {}
       let responseJson = JSON.parse(response)
       for (let index in responseJson.results) {
@@ -92,7 +90,6 @@ let updateContentPage = function (info, notes) {
         }
       }
       options.json = postData
-      console.log(options)
       return rp(options)
     })
 }
@@ -128,7 +125,6 @@ module.exports.createContentPage = function ()
           })
     .then(function (response)
     {
-      console.log(response)
       return;
     })
 }
