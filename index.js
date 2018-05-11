@@ -14,7 +14,7 @@ const APP_ID = 'amzn1.ask.skill.df62d19d-d51c-48a5-8127-a4dd6bb7f20c';
 const SKILL_NAME = 'Minutes';
 
 
-const HELP_MESSAGE = 'This is an Alexa for Business Minutes Skill.  You can dictate your minutes by saying start, or, you can say exit.';
+const HELP_MESSAGE = 'You can dictate your minutes by saying start followed by the meeting title, or, you can say exit.';
 const HELP_REPROMPT = 'Let me know when you\'re ready, just say start.';
 const STOP_MESSAGE = 'Goodbye!';
 
@@ -46,11 +46,13 @@ const handlers = {
     'StartListeningIntent': function() {
         // util.generate_response(this.response);
         let text = 'This is what you said: ' + this.event.request.intent.slots.stuff.value;
-        this.response.speak('Keep going' + text).listen('Keep going');
+        this.response.speak('Minutes are now being recorded').listen('I\'m still listening');
+        util.createContentPage()
         this.emit(':responseReady')
     },
     'CATCHALL': function() {  // if we get any intents other than the above
-        util.createContentPage(this.event.request.intent.slots.any.value)
+        util.updatePage(this.event.request.intent.slots.any.value)
+        this.response.listen('I\'m still listening');
         this.emit(':responseReady');
     }
 };

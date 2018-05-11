@@ -47,10 +47,7 @@
                     ],
                     "samples": [
                         "{hey|any}",
-                        "{hey hey|any}",
-                        "{hey hey hey|any}",
-                        "{hey hey hey hey|any}",
-                        "{hey hey hey hey hey|any}"
+                        "{hey hey|any}"
                     ]
                 },
                 {
